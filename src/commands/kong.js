@@ -1,4 +1,4 @@
-const { dump } = require('node-yaml')
+const { dump } = require('js-yaml')
 const tmp = require('tmp')
 const fs = require('fs')
 const Promise = require('bluebird')
@@ -73,7 +73,8 @@ const dockerComposeConfig = {
       image: 'postgres:9.4',
       environment: [
         'POSTGRES_USER=kong',
-        'POSTGRES_DB=kong'
+        'POSTGRES_DB=kong',
+        'POSTGRES_HOST_AUTH_METHOD=trust'
       ]
     },
     kong: {
