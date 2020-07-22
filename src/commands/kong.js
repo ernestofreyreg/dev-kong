@@ -91,7 +91,9 @@ const dockerComposeConfig = {
       ],
       environment: [
         'KONG_DATABASE=postgres',
-        'KONG_PG_HOST=kong-database'
+        'KONG_PG_HOST=kong-database',
+        'KONG_PG_DATABASE=kong',
+        'KONG_PG_USER=kong'
       ]
     }
   }
