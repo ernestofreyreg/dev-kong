@@ -73,7 +73,8 @@ const dockerComposeConfig = {
       image: 'postgres:9.4',
       environment: [
         'POSTGRES_USER=kong',
-        'POSTGRES_DB=kong'
+        'POSTGRES_DB=kong',
+        'POSTGRES_HOST_AUTH_METHOD=trust'
       ]
     },
     kong: {
@@ -90,7 +91,9 @@ const dockerComposeConfig = {
       ],
       environment: [
         'KONG_DATABASE=postgres',
-        'KONG_PG_HOST=kong-database'
+        'KONG_PG_DATABASE=kong',
+        'KONG_PG_HOST=kong-database',
+        'KONG_PG_USER=kong'
       ]
     }
   }
